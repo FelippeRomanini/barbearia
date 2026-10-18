@@ -19,5 +19,8 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.105.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
   }
 }
