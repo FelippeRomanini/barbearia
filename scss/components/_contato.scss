@@ -1,0 +1,232 @@
+@use "../abstracts/variables" as vars;
+
+.contato {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  background: #0b0b0b;
+  color: vars.$color-text;
+
+  .container {
+    width: min(100%, vars.$container-max-width);
+    margin: 0 auto;
+  }
+}
+
+.contato-chamada {
+  margin: 0 0 0.65rem;
+  color: vars.$color-accent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+#contato-titulo {
+  margin: 0 0 1rem;
+  color: vars.$color-text;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.contato-intro > p:last-child {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(vars.$color-text, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contato-formulario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid vars.$color-border;
+  background: #151515;
+}
+
+.campo-formulario {
+  display: grid;
+  gap: 0.5rem;
+
+  label {
+    color: vars.$color-text;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  label span {
+    color: rgba(vars.$color-text, 0.55);
+    font-weight: 400;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid rgba(vars.$color-text, 0.2);
+    border-radius: 2px;
+    background: #0b0b0b;
+    color: vars.$color-text;
+    font: inherit;
+
+    &::placeholder {
+      color: rgba(vars.$color-text, 0.45);
+    }
+
+    &:focus-visible {
+      outline: vars.$focus-outline-width solid vars.$color-accent;
+      outline-offset: 2px;
+      border-color: vars.$color-accent;
+    }
+  }
+
+  select:invalid {
+    color: rgba(vars.$color-text, 0.55);
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+}
+
+.campo-formulario-mensagem {
+  grid-column: 1 / -1;
+}
+
+.botao-contato {
+  grid-column: 1 / -1;
+  min-height: 50px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid vars.$color-accent;
+  background: vars.$color-accent;
+  color: #111;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background vars.$transition-fast, color vars.$transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    background: transparent;
+    color: vars.$color-accent;
+  }
+
+  &:focus-visible {
+    outline: vars.$focus-outline-width solid vars.$color-accent;
+    outline-offset: 3px;
+  }
+}
+
+.contato-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: vars.$color-accent;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.rodape {
+  padding: 2rem 1.5rem 1.25rem;
+  background: vars.$color-navbar-background;
+  color: vars.$color-text;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    width: min(100%, vars.$container-max-width);
+    margin: 0 auto;
+  }
+}
+
+.rodape-marca {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  span {
+    color: vars.$color-accent;
+  }
+}
+
+.rodape-redes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  a {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid vars.$color-border;
+    color: vars.$color-text;
+    transition: color vars.$transition-fast, border-color vars.$transition-fast;
+
+    &:hover,
+    &:focus-visible {
+      border-color: vars.$color-accent;
+      color: vars.$color-accent;
+    }
+
+    &:focus-visible {
+      outline: vars.$focus-outline-width solid vars.$color-accent;
+      outline-offset: 3px;
+    }
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+.rodape-aviso {
+  flex-basis: 100%;
+  margin: 0;
+  color: rgba(vars.$color-text, 0.55);
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+@media (max-width: vars.$breakpoint-mobile) {
+  .contato {
+    padding: 3.5rem 1rem;
+  }
+
+  .contato-formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-formulario-mensagem,
+  .botao-contato,
+  .contato-status {
+    grid-column: auto;
+  }
+
+  .rodape {
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .rodape-aviso {
+    text-align: left;
+  }
+}

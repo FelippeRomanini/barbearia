@@ -1,0 +1,103 @@
+@use "../abstracts/variables" as vars;
+
+.servicos {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  background: vars.$color-background;
+  color: vars.$color-text;
+
+  .container {
+    width: min(100%, vars.$container-max-width);
+    margin: 0 auto;
+  }
+}
+
+.servicos-intro {
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+
+.servicos-chamada {
+  margin: 0 0 0.65rem;
+  color: vars.$color-accent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+#servicos-titulo {
+  margin: 0 0 1rem;
+  color: vars.$color-text;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.servicos-descricao {
+  max-width: 38rem;
+  margin: 0;
+  color: rgba(vars.$color-text, 0.78);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.servico-card.card {
+  border-radius: 2px;
+  border: 1px solid vars.$color-border;
+  background: rgba(vars.$color-text, 0.035);
+  color: vars.$color-text;
+  transition: border-color vars.$transition-fast, transform vars.$transition-fast;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(vars.$color-accent, 0.65);
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  h3 {
+    margin: 2rem 0 0.65rem;
+    color: vars.$color-text;
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    margin: 0;
+    color: rgba(vars.$color-text, 0.72);
+    line-height: 1.6;
+  }
+}
+
+.servico-numero {
+  color: vars.$color-accent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: vars.$breakpoint-mobile) {
+  .servicos {
+    padding: 3.5rem 1rem;
+  }
+
+  .servicos-intro {
+    margin-bottom: 1.75rem;
+  }
+
+  .servico-card.card .card-body {
+    padding: 1.25rem;
+  }
+
+  .servico-card.card h3 {
+    margin-top: 1.25rem;
+  }
+}

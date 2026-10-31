@@ -1,0 +1,32 @@
+// Cores semânticas: nomeadas pelo papel que exercem na interface.
+$color-background: #000000;
+$color-navbar-background: #1b1916;
+$color-text: #f5f1e8;
+$color-accent: #c99a54;
+$color-border: rgba($color-text, 0.12);
+
+// Tipografia
+$font-family-base: Arial, Helvetica, sans-serif;
+$font-size-nav: 0.95rem;
+$font-size-nav-mobile: 0.88rem;
+$font-weight-nav: 600;
+
+// Espaçamento
+$space-nav-y: 0.8rem;
+$space-nav-x: 1.5rem;
+$space-nav-y-mobile: 0.75rem;
+$space-nav-x-mobile: 1rem;
+$space-nav-link-y: 0.7rem;
+$space-nav-link-x: 0.35rem;
+
+// Dimensões e responsividade
+$container-max-width: 1200px;
+$navbar-min-height: 64px;
+$logo-height: 56px;
+$logo-height-mobile: 48px;
+$breakpoint-mobile: 600px;
+
+// Animações e foco
+$transition-fast: 160ms ease;
+$focus-outline-width: 2px;
+$focus-outline-offset: 4px;

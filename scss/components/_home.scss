@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as vars;
+
+.home {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-image: linear-gradient(90deg, rgba(#000, 0.9) 0%, rgba(#000, 0.68) 48%, rgba(#000, 0.15) 100%), url("../img/sobre.png");
+  background-size: cover;
+  background-position: center right;
+  color: vars.$color-text;
+
+  .container {
+    width: min(100%, vars.$container-max-width);
+  }
+
+  .row {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.home-chamada {
+  margin: 0 0 1rem;
+  color: vars.$color-accent;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+
+#home-titulo {
+  max-width: 14ch;
+  margin: 0 0 1.25rem;
+  color: vars.$color-text;
+  font-size: clamp(3.25rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  text-transform: uppercase;
+
+  span {
+    color: vars.$color-accent;
+  }
+}
+
+.home-descricao {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  color: rgba(vars.$color-text, 0.84);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.botao-home {
+  border-color: vars.$color-accent;
+  color: vars.$color-text;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  &:hover,
+  &:focus-visible {
+    border-color: vars.$color-accent;
+    background: vars.$color-accent;
+    color: #111;
+  }
+}
+
+@media (max-width: vars.$breakpoint-mobile) {
+  .home {
+    background-image: linear-gradient(rgba(#000, 0.72), rgba(#000, 0.82)), url("../img/sobre.png");
+    background-position: 62% center;
+  }
+
+  #home-titulo {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+}
